@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'screens/home_screen.dart'; // Import your home screen
-import 'screens/login_screen.dart';
-import 'screens/register_screen.dart'; // Import the register screen
+import 'screens/auth/home_screen.dart'; // Import your home screen
+import 'screens/auth/login_screen.dart';
+import 'screens/auth/register_screen.dart'; // Import the register screen
+import 'screens/expenses/add_expense_screen.dart'; // Import Add Expense Screen
+import 'screens/expenses/edit_expense_screen.dart'; // Import Edit Expense Screen
+import 'screens/expenses/view_expenses_screen.dart'; // Import View Expenses Screen
 import 'services/auth_provider.dart';
 
 void main() {
@@ -33,7 +36,16 @@ class MyApp extends StatelessWidget {
               },
             ),
         '/home': (context) => HomeScreen(),
-        '/register': (context) => RegisterScreen(), // Register route
+        '/register': (context) => RegisterScreen(),
+        '/add-expense': (context) => AddExpenseScreen(),
+        '/view-expenses': (context) => ViewExpensesScreen(),
+        '/edit-expense': (context) => EditExpenseScreen(
+              date: '',
+              id: '',
+              description: '',
+              amount: '',
+              category: '',
+            ),
       },
     );
   }

@@ -30,6 +30,9 @@ class AuthService {
           .encode({'username': username, 'email': email, 'password': password}),
     );
 
+    // Log the response body for debugging
+    print('Registration response: ${response.body}');
+
     // Handle the response
     if (response.statusCode == 200) {
       return json.decode(response.body);
